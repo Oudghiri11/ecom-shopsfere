@@ -23,10 +23,18 @@ const createUser = asyncHandler(async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
-// Login a user
 const loginUserCtrl = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
-  console.log(email, password);
+  // check if user exists or not
+  const findUser = await User.findOne({ email });
+  if (findUser && (await findUser.isPasswordMatched(password))) {
+    res.json(findUser);
+  } else {
+    res.status(400).json({
+      status: "fail",
+      message: "Invalid Informations",
+    });
+  }
 });
 
 module.exports = { createUser, loginUserCtrl };
