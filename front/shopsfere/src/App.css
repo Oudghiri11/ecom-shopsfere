@@ -1,23 +1,60 @@
-.App {
-  text-align: center;
+.navbar {
+  display: flex;
+  justify-content: space-cente;
+  align-items: center;
+  position: relative;
+  background-color: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logoContainer {
+  position: absolute;
+  top: 10;
+  left: 10;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo {
+  height: 45px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.searchBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 10px;
+  padding-right: 30px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+}
+
+.searchIcon {
+  position: absolute;
+  right: 10px;
+  color: #aaa;
+}
+
+.cartContainer {
+  flex: 1;
+  display: flex;
+}
+
+.cartIcon {
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.profileContainer {
+  justify-content: flex-end;
+}
+
+.profileIcon {
+  font-size: 23px;
+  cursor: pointer;
 }
